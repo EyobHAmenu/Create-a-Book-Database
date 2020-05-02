@@ -5,6 +5,8 @@ public class Book {
     private String description;
     private double price;
 
+    public Book() { }
+
     public Book(String sku, String title, String author, String description, double price) {
         this.sku = sku;
         this.title = title;
