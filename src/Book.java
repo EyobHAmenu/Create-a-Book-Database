@@ -57,8 +57,8 @@ public class Book {
 
     @Override
     public String toString(){
-        return getSku() + "\t" + getTitle() + "\t"
-                + getAuthor() +"\t" + getDescription() + "\t"
+        return getSku() + "\t\t" + getTitle() + "\t\t"
+                + getAuthor() +"\t\t" + getDescription() + "\t\t$"
                 + getPrice();
     }
 }

@@ -4,6 +4,28 @@ import java.util.Scanner;
 public class BookDatabase {
     HashMap<String, Book> bookDB = new HashMap<String, Book>();
 
+    //Default constructor
+    public BookDatabase() { }
+
+    //Overload constructor
+    public BookDatabase(String sku){
+        String Title;
+        String Author;
+        String Description;
+        double Price;
+        Scanner in = new Scanner(System.in);
+            System.out.print("Enter Title for the book: ");
+            Title = in.nextLine();
+            System.out.print("Enter Author for the book: ");
+            Author = in.nextLine();
+            System.out.print("Enter Description for the book: ");
+            Description = in.nextLine();
+            System.out.print("Enter price for the book: ");
+            Price = in.nextDouble();
+            Book newBook = new Book(sku, Title, Author, Description, Price);
+            bookDB.put(sku, newBook);
+    }
+
     public Book searchBook(String sku) {
         return bookDB.get(sku);
     }

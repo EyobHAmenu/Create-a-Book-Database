@@ -29,22 +29,23 @@ public class BookList {
 
          */
         Scanner in = new Scanner(System.in);
-        int numberOfBooks;
+
+        String searchMoreBook ="yes";
         Book testBook;
+
         BookDatabase db1 = new BookDatabase();
-        System.out.println("How many books would you like to check in: ");
-        numberOfBooks = in.nextInt();
 
-        for(int i = 0; i < numberOfBooks; i++){
+//        System.out.println("How many books would you like to check in: ");
+//        numberOfBooks = in.nextInt();
+
+
+        while(searchMoreBook.equalsIgnoreCase("yes")){
             db1.addBook();
+            System.out.print("Do you want to search more book?(yes/no): ");
+            searchMoreBook = in.nextLine();
         }
-        db1.displayDataBase();
-
         //printing the books stored in the database
         System.out.println("**********Books in the database.***********");
-        for(String x : db1.getBookDB().keySet()) {
-            testBook = db1.searchBook(x);
-            System.out.println(testBook.toString());
-        }
+        db1.displayDataBase();
     }
 }
